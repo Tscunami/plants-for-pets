@@ -1,0 +1,100 @@
+body {
+  background-color: #fce38a;
+  font-family: "Montserrat";
+  text-align: center;
+}
+
+h1, h2, h3 {
+  color: #194350;
+}
+
+/* This is used with autocomplete */
+ul {
+    width: 20%;
+}
+
+footer {
+    padding: 10vh 0 0 0;
+}
+
+
+/*----------------------- Navbar ----------------------------*/
+/* Containers */
+.container-fluid {
+  padding: 3% 15%;
+}
+
+.navbar-collapse {
+    margin-right: 5%;
+    padding-right 0;
+}
+
+.dropdown-menu {
+    background: #eaffd0;
+}
+
+
+/*----------------------- Body Part --------------------------*/
+section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 75%;
+  height: 70vh;
+}
+
+.pet-choose-div {
+    padding: 20px
+}
+
+.pet-choose {
+    color: #f38181;
+    padding: 30px;
+    font-size: 2em;
+    text-decoration: none;
+}
+
+.pet-choose:hover {
+    color: #194350;
+}
+
+input[type=text] {
+  border: none;
+  border-bottom: 2px solid #95e1d3;
+  text-align: center;
+  padding-right: 20px;
+  background: #eaffd0;
+}
+
+.name-of-plant {
+    text-transform: capitalize;
+    font-size: 150%;
+}
+
+.center-image {
+    padding: 0 0 8% 0;
+}
+
+.ui-autocomplete .ui-menu-item{
+  background: #eaffd0;
+}
+
+.status {
+    padding: 3% 0 5% 0;
+}
+
+.status-ok {
+    color: #95e1d3;
+}
+
+.status-wrong {
+    color: #f38181;
+}
+
+.wiki-img {
+    width:400px;
+    height:400px;
+}
+
+

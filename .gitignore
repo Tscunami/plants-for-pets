@@ -1,0 +1,6 @@
+.idea
+__pycache__/
+venv
+static/data.py
+scraping/
+wrong_names.csv

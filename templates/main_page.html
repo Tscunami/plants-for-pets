@@ -1,0 +1,19 @@
+{% include "header.html" %}
+
+<section>
+
+    <div class="body-center">
+
+        <h1>Choose an animal:</h1>
+        <div class="pet-choose-div">
+            <a class="pet-choose" href="{{ url_for('animal', name='cat') }}"><i class="fas fa-cat"></i> Cat</a>
+            <a class="pet-choose" href="{{ url_for('animal', name='dog') }}"><i class="fas fa-dog"></i> Dog</a>
+        </div>
+
+
+
+    </div>
+
+</section>
+
+{% include "footer.html" %}

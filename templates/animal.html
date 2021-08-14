@@ -1,0 +1,53 @@
+{% include "header.html" %}
+
+<section>
+
+    <div class="body-center">
+
+        <!-- Logo above search bar -->
+        {% if animal == 'cat': %}
+            <i class="fas fa-cat fa-5x center-image"></i>
+        {% elif animal == 'dog': %}
+            <i class="fas fa-dog fa-5x center-image"></i>
+        {% endif %}
+
+        <!-- Search form -->
+        <form class="" action="{{ url_for('animal', name=animal) }}" method="POST">
+            <input type="text" id="tags" name="name-of-plant" class="rounded-pill" placeholder="Name of the plant"
+                   autofocus required>
+            <button class="btn btn-outline-success rounded-pill"><i class="fas fa-search"></i></button>
+        </form>
+
+        <!-- Show error message, when given name does not exists in the db.-->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <p>{{ messages[0] }}</p>
+            {% endif %}
+        {% endwith %}
+
+        <!-- If is any plant given-->
+        {% if plant: %}
+
+            <!-- Show status-->
+            {% if plant.is_ok == True %}
+                <i class="fas fa-check-circle status fa-3x status-ok"></i>
+            {% else %}
+                <i class="fas fa-times-circle status fa-3x status-wrong"></i>
+            {% endif %}
+
+            <!-- Show name of the given plant-->
+            <p class="name-of-plant">{{ plant.latin_name }}</p>
+
+            <!-- Show the image of the given plant-->
+            <div>
+                <img src="{{ plant.image_url }}" class="wiki-img" alt="No image found">
+            </div>
+            <i>Image source: www.wikipedia.org</i>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+{% include "footer.html" %}
