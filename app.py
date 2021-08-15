@@ -1,16 +1,12 @@
 """Main script to launch websites"""
 
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import render_template, request, redirect, url_for, flash
 
-from helpers.setup_db import CatPlant, DogPlant, db
-from static.data import SECRET_KEY
+from helpers.setup_db import CatPlant, DogPlant, setup_db
+from setup_app import setup_app
 
 
-app = Flask(__name__)
-app.config["SECRET_KEY"] = SECRET_KEY
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///plants.db"
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-db.init_app(app)
+app = setup_app()
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -87,6 +83,7 @@ def contact():
 
 
 if __name__ == "__main__":
+    setup_db(app)
     app.run(debug=True, threaded=True)
 
     # For checking if are all names valid

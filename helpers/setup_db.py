@@ -3,7 +3,6 @@
 from typing import Callable
 
 from flask_sqlalchemy import SQLAlchemy
-from flask import Flask
 
 
 class MySQLAlchemy(SQLAlchemy):
@@ -40,6 +39,15 @@ class DogPlant(db.Model):
     is_ok = db.Column(db.Boolean())
     source = db.Column(db.String(300))
     image_url = db.Column(db.String(150))
+
+
+def setup_db(app) -> None:
+    """Sets up database on app
+
+    :param app: app, instance of Flask app
+    """
+
+    db.init_app(app)
 
 
 # Create db with all tables
